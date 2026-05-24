@@ -4,7 +4,13 @@ case $- in
       *) return;;
 esac
 
-BASH_CONFIG_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASH_SOURCE_PATH="${BASH_SOURCE[0]}"
+
+if command -v readlink >/dev/null 2>&1; then
+  BASH_SOURCE_PATH="$(readlink -f "$BASH_SOURCE_PATH")"
+fi
+
+BASH_CONFIG_DIR="$(cd "$(dirname "$BASH_SOURCE_PATH")" && pwd)"
 
 # History
 HISTCONTROL=ignoreboth:erasedups
