@@ -41,3 +41,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 [ -f ~/.bashrc.local ] && . ~/.bashrc.local
+export PATH="$HOME/.local/bin:$PATH"

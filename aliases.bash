@@ -14,6 +14,8 @@ alias l='ls -CF'
 alias nr='npm run'
 alias cp='cp -i'
 alias mv='mv -i'
+alias py='python3'
+alias pysrc='source .venv/bin/activate'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Move removed files into /tmp so accidental deletes are recoverable until reboot.
