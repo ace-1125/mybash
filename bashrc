@@ -10,7 +10,7 @@ if command -v readlink >/dev/null 2>&1; then
   BASH_SOURCE_PATH="$(readlink -f "$BASH_SOURCE_PATH")"
 fi
 
-BASH_CONFIG_DIR="$(cd "$(dirname "$BASH_SOURCE_PATH")" && pwd)"
+BASH_CONFIG_DIR="$(builtin cd -- "$(dirname "$BASH_SOURCE_PATH")" && pwd)"
 
 # History
 HISTCONTROL=ignoreboth:erasedups
@@ -20,6 +20,8 @@ HISTTIMEFORMAT='%F %T '
 
 shopt -s histappend
 shopt -s cdspell
+shopt -s dirspell
+shopt -s autocd
 shopt -s checkwinsize
 
 sync_history() {

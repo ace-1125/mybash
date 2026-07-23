@@ -98,4 +98,8 @@ cd() {
   fi
 }
 
+mkcd() {
+  mkdir -p -- "$1" && cd -- "$1"
+}
+
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
